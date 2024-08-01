@@ -15,25 +15,20 @@ public:
     // Sets the player's major.
     void setMajor(const std::string& major);
 
-    // Decreases the player's hunger level by the specified amount.
-    void decreaseHunger(int amount);
-
     // Decreases the player's thirst level by the specified amount.
-    void decreaseThirst(int amount);
+    void decreaseTestReadiness(int amount);
 
     // Increases the player's health by the specified amount, up to a maximum of 100.
-    void increaseHealth(int amount);
+    void increaseTestReadiness(int amount);
 
     // Simulates the player sleeping in, adjusting health and hunger levels accordingly.
     void sleepIn(int sleepTime);
 
     // Simulates the player waking up and starting their day.
-    void wakeUp();
+    void wakeUp(int userChoice);
 
     // Accessors: These methods provide read-only access to private member variables.
-    int getHealth() const;
-    int getHunger() const;
-    int getThirst() const;
+    int getTestReadiness() const;
     std::string getMajor() const;
     std::string getInventory() const;
 
@@ -41,17 +36,11 @@ private:
     // The player's current health level (0-100).
     int health;
 
-    // The player's current hunger level (0-100).
-    int hunger;
-
-    // The player's current thirst level (0-100).
-    int thirst;
+    // Will track if the user is test ready 
+    int testReadiness;
 
     // The player's selected major, which determines their class schedule and other aspects.
     std::string major;
-
-    // The player's inventory, containing items they have acquired.
-    std::string inventory;
 };
 
 #endif // PLAYER_H
